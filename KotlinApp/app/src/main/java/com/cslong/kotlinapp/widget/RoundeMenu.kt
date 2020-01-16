@@ -11,7 +11,6 @@ import android.graphics.Paint
 import android.graphics.Point
 import android.os.Build
 import android.util.AttributeSet
-import android.util.Log
 import android.util.TypedValue
 import android.view.MotionEvent
 import android.view.View
@@ -56,10 +55,8 @@ class RoundeMenu : ViewGroup {
     private val center = Point()
     private val mCenterPaint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val mRoundPaint = Paint(Paint.ANTI_ALIAS_FLAG)
-    //    private val outlineProvider: OvalOutline? = null
     private var mExpandAnimator = ValueAnimator.ofFloat(0f, 0f)
     private var mColorAnimator = ValueAnimator.ofFloat(0f, 0f)
-
 
     private var collapsedRadius = 0
     private var expandedRadius = 0
@@ -83,7 +80,7 @@ class RoundeMenu : ViewGroup {
         expandedRadius =
             ta.getDimensionPixelSize(
                 R.styleable.RoundelMenu_round_menu_expandedRadius,
-                dp2px(84.0.toFloat())
+                dp2px(44.0.toFloat())
             )
         mRoundColor = ta.getColor(
             R.styleable.RoundelMenu_round_menu_roundColor,
